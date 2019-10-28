@@ -31,8 +31,6 @@ INNER JOIN salaries on employees.emp_no = salaries.emp_no;
 
 
 -- 2. List employees who were hired in 1986.
-select date_part('year', hire_date) 
-from employees;
 
 SELECT
 	employees.emp_no,
@@ -48,7 +46,6 @@ WHERE
 -- 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
 SELECT
 	dept_manager.dept_no,
-	dept_manager.emp_no,
 	departments.dept_name,
 	employees.last_name,
 	employees.first_name,
@@ -59,7 +56,7 @@ FROM
 INNER JOIN departments on dept_manager.dept_no = departments.dept_no
 INNER JOIN employees on dept_manager.emp_no = employees.emp_no;
 	
-from dept_manager
+
 
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 SELECT
@@ -121,6 +118,7 @@ GROUP By
 	last_name
 ORDER By
 	COUNT(last_name) DESC; 
+
 
 
 
